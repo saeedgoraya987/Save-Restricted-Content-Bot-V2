@@ -67,7 +67,7 @@ async def token_handler(client, message):
         await message.reply_photo(
             photo=image_url,
             caption=(
-                "Hi <a href="tg://user?id={user.id}">{user.first_name}</a>👋 Welcome, Wanna intro...?\n\n"
+                "Hi {} 👋 Welcome, Wanna intro...?\n\n"
                 "✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n"
                 "✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more. \n\n"
                 "> Must check /terms, /plan & /help\n\n"
