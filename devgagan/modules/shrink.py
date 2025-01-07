@@ -55,6 +55,7 @@ async def token_handler(client, message):
     if join == 1:
         return
     user_id = message.chat.id
+    user = message.from_user.mention
     if len(message.command) <= 1:
         image_url = "https://i.postimg.cc/GhQk8Pk8/VKHLLRIUUSFVBQB.jpg"
         join_button = InlineKeyboardButton("Join Channel", url="https://t.me/BackupRedirect")
@@ -67,7 +68,7 @@ async def token_handler(client, message):
         await message.reply_photo(
             photo=image_url,
             caption=(
-                "Hi {} 👋 Welcome, Wanna intro...?\n\n"
+                "Hi {user.mention} 👋 Welcome, Wanna intro...?\n\n"
                 "✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n"
                 "✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more. \n\n"
                 "> Must check /terms, /plan & /help\n\n"
