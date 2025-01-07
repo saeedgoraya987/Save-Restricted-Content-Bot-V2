@@ -57,21 +57,20 @@ async def token_handler(client, message):
     user_id = message.chat.id
     if len(message.command) <= 1:
         image_url = "https://i.postimg.cc/GhQk8Pk8/VKHLLRIUUSFVBQB.jpg"
-        join_button = InlineKeyboardButton("Join Channel", url="https://t.me/BackupRedirect")
-        premium = InlineKeyboardButton("Get Premium", url="https://t.me/villagerdragon")  # Callback for Help button
+        join_button = InlineKeyboardButton("📍 Updates Channel", url="https://t.me/BackupRedirect")
+        premium = InlineKeyboardButton("🔥 Buy Premium", url="https://t.me/villagerdragon")  # Callback for Help button
         keyboard = InlineKeyboardMarkup([
-            [join_button],  # First button
-            [premium]   # Second button
+            [join_button],[premium]   # Second button
         ])
         # Send the message with the image and keyboard
         await message.reply_photo(
             photo=image_url,
             caption=(
-                "👋 Welcome, Wanna intro...?\n\n"
-                "✳️ I can save posts from channels or groups where forwarding is off. I can download videos/audio from YT, INSTA, ... social platforms\n"
-                "✳️ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more. \n\n"
-                "> Must check /terms, /plan & /help\n\n"
-                "> 👉 **__Note:__** Initiate /set to auto setup bot commands (owner only)"
+                "Hi👋, I am a **Save Restricted Bot** based on /token. Press for more info.\n\n"
+                "✳️ I can save posts from channels or groups where forwarding is off.\n\n"
+                "⚡ Simply send the post link of a public channel. For private channels, do /login. Send /help to know more. \n\n"
+                "> Must check /terms, /plan & /help"
+                ""
             ),
             reply_markup=keyboard
         )
@@ -126,6 +125,6 @@ async def smart_handler(client, message):
 
         # Create a button with the shortened link
         button = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Verify the token now...", url=shortened_url)]]
+            [[InlineKeyboardButton("Click Here To Verify", url=shortened_url)]]
         )
-        await message.reply("Click the button below to verify your free access token: \n\n> What will you get ? \n1. No time bound upto 3 hours \n2. Batch command limit will be FreeLimit + 20 \n3. All functions unlocked", reply_markup=button)
+        await message.reply("**Generate New token to use me**\n\nAlways generate new link to get new token before using bot. ⚠️Do not open previous/older link.", reply_markup=button)
